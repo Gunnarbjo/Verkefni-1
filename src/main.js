@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * <!DOCTYPE html>
  * <html lang="is">
  * <head>
@@ -9,35 +9,9 @@
  * </head>
  * <body>
  *  <div>Halló heimur></div>
- * </body> 
+ * </body>
  * </html>
  */
+import { makeHtml } from "./makeHtml.js";
 
-import { writeFile } from 'fs/promises'
-
-async function main(){
-    const title = `Verkefni 1`
-
-    const filename = `index.html`;
-    const data = `<!DOCTYPE html>
-    <html lang="is">
-    <head>
-        <meta charset="UTF-8">
-        <title>${title}</title>
-    </head>
-    <body>
-        <div>Halló heimur</div>
-        <div class="timi">Uppfært:${new Date().toISOString()}</div>
-    </body>
-    </html>
-    `;
-try{
-    const result = await writeFile(`./dist/${filename}`,data, { flag:`w+`});
-}catch(e){
-    console.error(`Failed to create ${filename}`, e);
-}
-}
-    main().catch((e) => {
-        console(`Error occured`, e)
-    })
-
+makeHtml();

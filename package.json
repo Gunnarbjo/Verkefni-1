@@ -8,6 +8,7 @@
     "browser-sync": "^2.27.7",
     "build": "^0.1.4",
     "concurrently": "^7.0.0",
+    "mathjs": "^10.1.0",
     "sass": "^1.49.0"
   },
   "devDependencies": {

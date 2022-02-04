@@ -1,23 +1,20 @@
-text1 = FileReader.readAsText(`/data/1.txt`);
+import { readFile } from "fs/promises";
+import { join } from "path";
 
-text2 = FileReader.readAsText(`/data/2.txt`);
+const FILE_LOCATION = "./data";
 
-text3 = FileReader.readAsText(`/data/3.txt`);
+export async function FileToNumber(file) {
+  const locat = join(FILE_LOCATION, file);
+  const data = await readFile(locat);
+  const dataString = data.toString("utf-8");
 
-text4 = FileReader.readAsText(`/data/4.txt`);
-
-text5 = FileReader.readAsText(`/data/5.txt`);
-
-text6 = FileReader.readAsText(`/data/6.txt`);
-
-text7 = FileReader.readAsText(`/data/7.txt`);
-
-text8 = FileReader.readAsText(`/data/8.txt`);
-
-text9 = FileReader.readAsText(`/data/9.txt`);
-
-text10 = FileReader.readAsText(`/data/10.txt`);
-
-text11 = FileReader.readAsText(`/data/11.txt`);
-
-text12 = FileReader.readAsText(`/data/12.txt`);
+  return dataString;
+}
+for (let index = 1; index < data.length; index++) {
+    const texti = data[index];
+    
+}
+/* 
+const arrayFile = array.filter((value) => !Number.isNaN(value));
+const numberObject = (name: file, data: arrayFile)
+return numberObject;*/
